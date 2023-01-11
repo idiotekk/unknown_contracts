@@ -1,4 +1,6 @@
-# Memory vs storage
+no capital letters in this note (unless absolutely necessary)
+
+# memory vs storage
 use memory as you can for intermediate calculations for lower gas
 
 # types
