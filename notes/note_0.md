@@ -49,6 +49,14 @@ struct Car {
 }
 ```
 
+## time units
+- `seconds`, `minutes`, `hours`, `days`, `weeks`. can't follow variables.
+```solidity
+function f(uint start, uint delta) public {
+    require (block.timestamp >= start + delta * 1 days);
+}
+```
+
 # special variables
 - `block`
 - `msg`
@@ -62,13 +70,7 @@ struct Car {
 - `revert`
 - `revert(string memory reason)`
 
-## time units
-- `seconds`, `minutes`, `hours`, `days`, `weeks`. can't follow variables.
-```solidity
-function f(uint start, uint delta) public {
-    require (block.timestamp >= start + delta * 1 days);
-}
-```
+
 
 # gotchas
 - contract implicitly has a getter for each public variable - no getter needed.
