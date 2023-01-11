@@ -63,7 +63,7 @@ struct Car {
 - `revert(string memory reason)`
 
 ## time units
-- `seconds`, `minutes`, `hours`, `days`, `weeks`. can't follow integers.
+- `seconds`, `minutes`, `hours`, `days`, `weeks`. can't follow variables.
 ```solidity
 function f(uint start, uint delta) public {
     require (block.timestamp >= start + delta * 1 days);
