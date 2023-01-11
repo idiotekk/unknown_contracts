@@ -10,6 +10,9 @@ use memory as you can for intermediate calculations for lower gas
 - `pure`, won't read or modify contract's data
 - `payable`, can pay ether when calling this function
 
+### more about functions
+functions that modify contract data should not return values.
+
 ## basic types
 - `string`
 - `bool`
@@ -46,8 +49,26 @@ struct Car {
 }
 ```
 
-# more about functions
-functions that modify contract data should not return values.
+# special variables
+- `block`
+- `msg`
+- `tx`
+- `gasleft`
+- `blockhash(uint blockNumber)`
+
+# error handling
+- `assert` error checking
+- `require` validation
+- `revert`
+- `revert(string memory reason)`
+
+## time units
+- `seconds`, `minutes`, `hours`, `days`, `weeks`. can't follow integers.
+```solidity
+function f(uint start, uint delta) public {
+    require (block.timestamp >= start + delta * 1 days);
+}
+```
 
 # gotchas
 - contract implicitly has a getter for each public variable - no getter needed.
