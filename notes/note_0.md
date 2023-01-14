@@ -1,7 +1,11 @@
 no capital letters in this note (unless absolutely necessary)
 
-# memory vs storage
-use memory as you can for intermediate calculations for lower gas
+# data location
+- `calldata`, can't be modified
+- `memory`
+    - memory cost is quadratic if [large](https://ethereum.github.io/yellowpaper/paper.pdf#page=28). (e.g. tornado cash)
+    - memory is not cleared throughout the transaction, even if all references to a memory are out of scope.
+- `storage`
 
 # types
 ## function types
@@ -22,6 +26,7 @@ functions that modify contract data should not return values.
     - ...
     - `int256`
     - `int` is an alias of int256
+    - smaller int types cost more in exeuction because it need to trim the data at the slot to get the correct int
 - `uint`
 - `fixed`, 'fixed' point number
 - `ufixed`
