@@ -21,7 +21,7 @@ functions that modify contract data should not return values.
 - `string`
 - `bool`
 - `int`
-    - `int8`, -128 to 127 (2^8 in total)
+    - `int8`, -128 to 127 (2^8 in total). memory size = 1 byte = 8 bits (history: 1 byte = 8 bits because it can contain the alphanumerics and bunch of other symbols)
     - `int16`, -32768 to 32767
     - ...
     - `int256`
