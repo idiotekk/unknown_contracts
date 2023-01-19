@@ -18,3 +18,5 @@
 
 - a `payable` function is cheaper because it doesn't check send ether = 0
 - 21000 for every transaction (see $G_{transaction}$ in yellow paper): used for verification of bunch of things: signature, enough balance etc.
+- calling functions in library saves bytecode because the functions are not part of your contract
+- single line swaps `(a, b) = (b, a)`

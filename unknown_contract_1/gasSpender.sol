@@ -31,4 +31,21 @@ contract GasSpender {
         }
         return value;
     }
+
+    function loopChecked(uint n) public returns(uint) { // n = 10, cost 62545
+        x = 0;
+        for(uint256 i = 0; i < n; i++) {
+            x = x + i;
+        }
+        return x;
+    }
+
+    function loopUnchecked(uint n) public returns(uint) { // n = 10, cost 14150
+        x = 0;
+        for(uint256 i = 0; i < n;) {
+            unchecked{ i++; }
+        }
+        return x;
+    }
+
 }
