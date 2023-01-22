@@ -1,3 +1,4 @@
+# test basic functions
 import os
 import pprint
 import json
@@ -19,6 +20,9 @@ assert w3.isConnected()
 addr = "0x5Af0D9827E0c53E4799BB226655A1de152A425a5" # milady
 abi = address_to_abi(addr, from_cache=True)
 contract = w3.eth.contract(address=addr, abi=abi)
-print(
-    contract.functions.ownerOf(9399).call() # owner of 9399
-)
+
+for token_id in list(range(10)) + [9399]:
+    print(
+        token_id,
+        contract.functions.ownerOf(token_id).call()
+    )
